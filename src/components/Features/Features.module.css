@@ -1,0 +1,177 @@
+/* Features.module.css */
+.features {
+    padding: 6rem 1rem 4rem;
+    background: #f8f9fa;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.heroHook {
+    text-align: center;
+    max-width: 880px;
+    margin: 0 auto 4rem;
+    padding: 0 1.5rem;
+}
+  
+.heroHook h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin: 0 auto 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.features h2 {
+text-align: center;
+margin-bottom: 3rem;
+font-size: 2.5rem;
+color: #333;
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.featureCard {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.featureCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.featureIcon {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.featureCard:hover .featureIcon {
+    transform: scale(1.1);
+}
+
+.featureCard h3 {
+    color: #222;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.featureCard p {
+    color: #666;
+    line-height: 1.4;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.featureDetails {
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.featureDetails h4 {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.featureDetails ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.featureDetails li {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.featureDetails li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #007bff;
+}
+
+.sizeGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.sizeCard {
+    background: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .featuresGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .featureCard {
+        padding: 1rem;
+    }
+
+    .featureIcon {
+        font-size: 1.3rem;
+    }
+
+    .featureCard h3 {
+        font-size: 1.1rem;
+    }
+
+    .featureCard p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .featuresGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .featureCard {
+        padding: 0.75rem;
+    }
+
+    .featureIcon {
+        font-size: 1.2rem;
+    }
+
+    .featureCard h3 {
+        font-size: 1rem;
+    }
+
+    .featureCard p {
+        font-size: 0.8rem;
+    }
+
+    .featureDetails h4 {
+        font-size: 0.85rem;
+    }
+
+    .featureDetails li {
+        font-size: 0.8rem;
+    }
+}

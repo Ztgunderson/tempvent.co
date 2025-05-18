@@ -1,0 +1,35 @@
+:root {
+    --content-width: min(100% - 2rem, 1200px);
+    --fluid-padding: clamp(1rem, 5vw, 2rem);
+    --section-gap: clamp(2rem, 8vw, 4rem);
+  }
+  
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    min-height: 100vh;
+    padding: var(--fluid-padding);
+  }
+  
+  main {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--fluid-padding) 0;
+  }
+  
+  header, footer {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--fluid-padding) 0;
+  }
+  
+  /* Responsive Grid Container */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: var(--section-gap);
+    width: 100%;
+  }

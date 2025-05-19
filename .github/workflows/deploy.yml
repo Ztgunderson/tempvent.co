@@ -32,12 +32,15 @@ jobs:
           npm run build
           # Create .nojekyll file
           touch out/.nojekyll
-          # Ensure public assets are copied and maintain directory structure
-          mkdir -p out/images out/videos
-          cp -r public/images/* out/images/ 2>/dev/null || true
-          cp -r public/videos/* out/videos/ 2>/dev/null || true
-          # Copy any other static files
-          cp -r public/* out/ 2>/dev/null || true
+          # Ensure the tempvent.co directory exists
+          mkdir -p out/tempvent.co
+          # Move everything to the tempvent.co subdirectory
+          mv out/_next out/tempvent.co/ 2>/dev/null || true
+          mv out/images out/tempvent.co/ 2>/dev/null || true
+          mv out/videos out/tempvent.co/ 2>/dev/null || true
+          mv out/*.html out/tempvent.co/ 2>/dev/null || true
+          # Copy any remaining static files
+          cp -r public/* out/tempvent.co/ 2>/dev/null || true
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3

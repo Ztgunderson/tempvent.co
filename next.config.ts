@@ -11,7 +11,8 @@ const nextConfig: NextConfig = {
     domains: [],
   },
 
-  // Remove basePath and only use assetPrefix
+  // Use both basePath and assetPrefix for GitHub Pages
+  basePath: isProd ? "/tempvent.co" : "",
   assetPrefix: isProd ? "/tempvent.co/" : "",
 
   // Ensure it exports each route as a directory with index.html:

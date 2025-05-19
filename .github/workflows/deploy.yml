@@ -30,6 +30,8 @@ jobs:
       - name: Build (static export)
         run: |
           npm run build
+          # Create .nojekyll file
+          touch out/.nojekyll
           # Ensure public assets are copied and maintain directory structure
           mkdir -p out/images out/videos
           cp -r public/images/* out/images/ 2>/dev/null || true

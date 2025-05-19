@@ -1,44 +1,31 @@
 import { FC } from 'react';
-import Image from 'next/image';
 import styles from './Team.module.css';
 
 const Team: FC = () => {
+  const basePath = process.env.NODE_ENV === 'production' ? '/tempvent.co' : '';
+  
   return (
-    <section className={styles.team}>
-      <h2>Meet the Team</h2>
-      <div className={styles.teamGrid}>
-        <div className={styles.teamMember}>
-          <Image
-            src="/images/team/tomGunderson.png"
-            alt="Tom Gunderson"
-            width={120}
-            height={120}
-            className={styles.teamMemberImage}
-          />
-          <h3>Tom Gunderson</h3>
-        </div>
-        <div className={styles.teamMember}>
-          <Image
-            src="/images/team/zachGunderson.png"
-            alt="Zach Gunderson"
-            width={120}
-            height={120}
-            className={styles.teamMemberImage}
-          />
-          <h3>Zach Gunderson</h3>
-        </div>
-        <div className={styles.teamMember}>
-          <Image
-            src="/images/team/kevinArkin.jpg"
-            alt="Kevin Arkin"
-            width={120}
-            height={120}
-            className={styles.teamMemberImage}
-          />
-          <h3>Kevin Arkin</h3>
+    <section className={styles.team} id="team">
+      <div className={styles.teamContent}>
+        <h2>Our Team</h2>
+        <div className={styles.teamMembers}>
+          <div className={styles.teamMember}>
+            <img src={`${basePath}/images/team/tomGunderson.png`} alt="Tom Gunderson" />
+            <h3>Tom Gunderson</h3>
+            <p>Co-Founder & CEO</p>
+          </div>
+          <div className={styles.teamMember}>
+            <img src={`${basePath}/images/team/zachGunderson.png`} alt="Zach Gunderson" />
+            <h3>Zach Gunderson</h3>
+            <p>Co-Founder & CTO</p>
+          </div>
+          <div className={styles.teamMember}>
+            <img src={`${basePath}/images/team/kevinArkin.jpg`} alt="Kevin Arkin" />
+            <h3>Kevin Arkin</h3>
+            <p>Co-Founder & COO</p>
+          </div>
         </div>
       </div>
-      <p className={styles.teamDescription}>One father, one son, and one buddy</p>
     </section>
   );
 };

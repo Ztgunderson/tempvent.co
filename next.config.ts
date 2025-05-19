@@ -11,8 +11,9 @@ const nextConfig: NextConfig = {
     domains: [],
   },
 
-  // Use both basePath and assetPrefix for GitHub Pages
+  // Mount the app under /tempvent.co
   basePath: isProd ? "/tempvent.co" : "",
+  // Prefix all asset URLs with /tempvent.co/
   assetPrefix: isProd ? "/tempvent.co/" : "",
 
   // Ensure it exports each route as a directory with index.html:
@@ -23,6 +24,9 @@ const nextConfig: NextConfig = {
     config.module.rules.push({
       test: /\.(png|jpg|gif|svg|mp4|webm)$/,
       type: 'asset/resource',
+      generator: {
+        filename: isProd ? 'tempvent.co/static/[hash][ext]' : 'static/[hash][ext]'
+      }
     });
     return config;
   },

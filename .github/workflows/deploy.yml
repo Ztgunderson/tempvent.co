@@ -39,6 +39,7 @@ jobs:
           mv out/images out/tempvent.co/ 2>/dev/null || true
           mv out/videos out/tempvent.co/ 2>/dev/null || true
           mv out/*.html out/tempvent.co/ 2>/dev/null || true
+          mv out/static out/tempvent.co/ 2>/dev/null || true
           # Copy any remaining static files
           cp -r public/* out/tempvent.co/ 2>/dev/null || true
 

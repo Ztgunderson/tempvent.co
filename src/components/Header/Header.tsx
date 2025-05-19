@@ -15,7 +15,6 @@ interface NavLink {
 
 const Header: FC = () => {
   const { setIsCartOpen, cartItems, isCartOpen } = useCart();
-  const basePath = process.env.NODE_ENV === 'production' ? '/tempvent.co' : '';
 
   const navigationLinks: NavLink[] = [
     { href: '#products', text: 'Product' },
@@ -27,7 +26,7 @@ const Header: FC = () => {
       <div className={styles.logoContainer}>
         <Link href="/" className={styles.logoLink}>
           <Image
-            src={`${basePath}/images/logo/Logo2_cropped.png`}
+            src="/images/logo/Logo2_cropped.png"
             alt="Temporary Covers, Cleaner Than All The Others"
             width={50}
             height={50}

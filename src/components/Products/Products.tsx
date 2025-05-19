@@ -1,6 +1,7 @@
 'use client';
 
 import { FC, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import styles from './Products.module.css';
 
 interface Product {
@@ -19,8 +20,9 @@ const Products: FC<{ id: string }> = ({ id }) => {
     '2_2512': 0,
   });
 
-  // Add basePath handling
-  const basePath = process.env.NODE_ENV === 'production' ? '/tempvent.co' : '';
+  const pathname = usePathname();
+  const isProd = pathname.startsWith('/tempvent.co');
+  const basePath = isProd ? '/tempvent.co' : '';
   
   const getAssetPath = (path: string) => `${basePath}${path}`;
 

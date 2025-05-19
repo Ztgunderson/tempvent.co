@@ -28,12 +28,17 @@ jobs:
         run: npm ci
 
       - name: Build (static export)
-        run: npm run build
+        run: |
+          npm run build
+          # Ensure the output directory exists
+          mkdir -p out/tempvent.co
+          # Move contents to the correct directory
+          mv out/* out/tempvent.co/ 2>/dev/null || true
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out/tempvent.co
+          publish_dir: ./out
           # optional: keep history
           keep_files: false

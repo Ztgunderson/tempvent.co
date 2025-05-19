@@ -3,6 +3,8 @@
 import { FC, useState } from 'react';
 import styles from './Products.module.css';
 
+const isProd = process.env.NODE_ENV === "production";
+
 interface Product {
   id: string;
   title: string;
@@ -48,10 +50,10 @@ const Products: FC<{ id: string }> = ({ id }) => {
       description: 'Fits into 4x10 vents',
       price: '19.99',
       images: [
-        '/images/products/4x10-left.svg',
-        '/images/products/4x10-right.svg',
-        '/images/products/4x10-top.svg',
-        '/images/products/4x10-bottom.svg'
+        `${isProd ? '/tempvent.co' : ''}/images/products/4x10-left.svg`,
+        `${isProd ? '/tempvent.co' : ''}/images/products/4x10-right.svg`,
+        `${isProd ? '/tempvent.co' : ''}/images/products/4x10-top.svg`,
+        `${isProd ? '/tempvent.co' : ''}/images/products/4x10-bottom.svg`
       ],
       features: []
     },
@@ -61,10 +63,10 @@ const Products: FC<{ id: string }> = ({ id }) => {
       description: 'Fits into 2.25x12 vents',
       price: '19.99',
       images: [
-        '/images/products/2_25x12-left.svg',
-        '/images/products/2_25x12-right.svg',
-        '/images/products/2_25x12-top.svg',
-        '/images/products/2_25x12-bottom.svg'
+        `${isProd ? '/tempvent.co' : ''}/images/products/2_25x12-left.svg`,
+        `${isProd ? '/tempvent.co' : ''}/images/products/2_25x12-right.svg`,
+        `${isProd ? '/tempvent.co' : ''}/images/products/2_25x12-top.svg`,
+        `${isProd ? '/tempvent.co' : ''}/images/products/2_25x12-bottom.svg`
       ],
       features: []
     },
@@ -74,10 +76,10 @@ const Products: FC<{ id: string }> = ({ id }) => {
       description: 'Fits into 4x12 vents',
       price: '24.99',
       images: [
-        '/images/products/4x12-left.svg',
-        '/images/products/4x12-right.svg',
-        '/images/products/4x12-top.svg',
-        '/images/products/4x12-bottom.svg'
+        `${isProd ? '/tempvent.co' : ''}/images/products/4x12-left.svg`,
+        `${isProd ? '/tempvent.co' : ''}/images/products/4x12-right.svg`,
+        `${isProd ? '/tempvent.co' : ''}/images/products/4x12-top.svg`,
+        `${isProd ? '/tempvent.co' : ''}/images/products/4x12-bottom.svg`
       ],
       features: []
     },
@@ -86,7 +88,7 @@ const Products: FC<{ id: string }> = ({ id }) => {
       title: 'Custom Vent',
       description: 'Custom size for your specific needs',
       price: 'Contact for Quote',
-      images: ['/images/products/custom-sizes.png'],
+      images: [`${isProd ? '/tempvent.co' : ''}/images/products/custom-sizes.png`],
       features: [
         'Custom Sizing Available',
         'Made to Order',
@@ -97,7 +99,7 @@ const Products: FC<{ id: string }> = ({ id }) => {
       title: 'Replacable Branded Sticker',
       description: 'Custom branded stickers for your vents',
       price: '9.99',
-      images: ['/images/products/4x10_logo.png'],
+      images: [`${isProd ? '/tempvent.co' : ''}/images/products/4x10_logo.png`],
       features: [
         'Custom Branding',
         'Easy to Apply',
@@ -109,7 +111,7 @@ const Products: FC<{ id: string }> = ({ id }) => {
       title: 'Replacable Filter',
       description: 'Universal filter for all vent sizes',
       price: '14.99',
-      images: ['/images/products/filter.svg'],
+      images: [`${isProd ? '/tempvent.co' : ''}/images/products/filter.svg`],
       features: [
         'High-Quality Material',
         'Easy to Replace',
@@ -131,7 +133,7 @@ const Products: FC<{ id: string }> = ({ id }) => {
             playsInline
             controls
           >
-            <source src="/videos/product-demo.mp4" type="video/mp4" />
+            <source src={`${isProd ? '/tempvent.co' : ''}/videos/product-demo.mp4`} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

@@ -2,6 +2,8 @@ import { FC } from 'react';
 import Image from 'next/image';
 import styles from './Team.module.css';
 
+const isProd = process.env.NODE_ENV === "production";
+
 const Team: FC = () => {
   return (
     <section className={styles.team}>
@@ -9,7 +11,7 @@ const Team: FC = () => {
       <div className={styles.teamGrid}>
         <div className={styles.teamMember}>
           <Image
-            src="/images/team/tomGunderson.png"
+            src={`${isProd ? '/tempvent.co' : ''}/images/team/tomGunderson.png`}
             alt="Tom Gunderson"
             width={120}
             height={120}
@@ -19,7 +21,7 @@ const Team: FC = () => {
         </div>
         <div className={styles.teamMember}>
           <Image
-            src="/images/team/zachGunderson.png"
+            src={`${isProd ? '/tempvent.co' : ''}/images/team/zachGunderson.png`}
             alt="Zach Gunderson"
             width={120}
             height={120}
@@ -29,7 +31,7 @@ const Team: FC = () => {
         </div>
         <div className={styles.teamMember}>
           <Image
-            src="/images/team/kevinArkin.jpg"
+            src={`${isProd ? '/tempvent.co' : ''}/images/team/kevinArkin.jpg`}
             alt="Kevin Arkin"
             width={120}
             height={120}

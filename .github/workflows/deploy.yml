@@ -30,8 +30,12 @@ jobs:
       - name: Build (static export)
         run: |
           npm run build
-          # Ensure public assets are copied
-          cp -r public/* out/
+          # Ensure public assets are copied and maintain directory structure
+          mkdir -p out/images out/videos
+          cp -r public/images/* out/images/ 2>/dev/null || true
+          cp -r public/videos/* out/videos/ 2>/dev/null || true
+          # Copy any other static files
+          cp -r public/* out/ 2>/dev/null || true
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
@@ -39,3 +43,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
           keep_files: false
+          force_orphan: true

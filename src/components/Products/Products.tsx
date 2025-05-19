@@ -2,7 +2,6 @@
 
 import { FC, useState } from 'react';
 import styles from './Products.module.css';
-import Image from 'next/image';
 
 interface Product {
   id: string;

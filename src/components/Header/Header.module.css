@@ -9,29 +9,32 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 1rem 2rem;
+    padding: 1rem;
     display: flex;
     transition: all 0.3s ease;
     align-items: center;
     justify-content: space-between;
-    height: 80px; /* Fixed height for header */
+    height: 80px;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .logoContainer {
     margin-right: auto;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
   }
   
   .logoLink {
     display: flex;
     align-items: center;
     text-decoration: none;
-    gap: 1rem;
+    gap: 0.5rem;
   }
   
   .logo {
-    height: 50px;
+    height: 40px;
     width: auto;
     transition: transform 0.3s ease;
   }
@@ -62,10 +65,11 @@
   
   .navList {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     list-style: none;
     margin: 0;
     padding: 0;
+    flex-shrink: 0;
   }
   
   .navList li {
@@ -77,6 +81,7 @@
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
+    white-space: nowrap;
   }
   
   .navList li a:hover {
@@ -86,10 +91,10 @@
   .navList li:last-child a {
     background-color: #007bff;
     color: white;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 4px;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   .navList li:last-child a:hover {
@@ -106,7 +111,7 @@
   /* Responsive design */
   @media (max-width: 768px) {
     .header {
-      padding: 1rem;
+      padding: 0.75rem;
     }
   
     .logoTitle {
@@ -118,46 +123,55 @@
     }
   
     .navList {
-      gap: 1.5rem;
+      gap: 0.75rem;
     }
   
     .navList li a {
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
   
     .navList li:last-child a {
-      font-size: 1rem;
-      padding: 0.4rem 1.2rem;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.75rem;
     }
   }
 
   @media (max-width: 480px) {
+    .header {
+      padding: 0.5rem;
+    }
+  
     .logoText {
       display: none;
     }
   
+    .logo {
+      height: 35px;
+    }
+  
     .navList {
-      gap: 1rem;
+      gap: 0.5rem;
     }
   
     .navList li a {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
   
     .navList li:last-child a {
-      font-size: 0.9rem;
-      padding: 0.3rem 1rem;
+      font-size: 0.85rem;
+      padding: 0.3rem 0.5rem;
     }
   }
 
   .cartButton {
     background: #007bff;
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
+    font-size: 0.9rem;
   }
   
   .cartButton:hover {

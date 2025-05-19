@@ -8,21 +8,19 @@ const Team: FC = () => {
         <h2>Our Team</h2>
         <div className={styles.teamMembers}>
           <div className={styles.teamMember}>
-            <img src="/images/team/tomGunderson.png" alt="Tom Gunderson" />
+            <img src="/images/team/tomGunderson.png" alt="Tom Gunderson" className={styles.teamMemberImage} />
             <h3>Tom Gunderson</h3>
-            <p>Co-Founder & CEO</p>
           </div>
           <div className={styles.teamMember}>
-            <img src="/images/team/zachGunderson.png" alt="Zach Gunderson" />
+            <img src="/images/team/zachGunderson.png" alt="Zach Gunderson" className={styles.teamMemberImage} />
             <h3>Zach Gunderson</h3>
-            <p>Co-Founder & CTO</p>
           </div>
           <div className={styles.teamMember}>
-            <img src="/images/team/kevinArkin.jpg" alt="Kevin Arkin" />
+            <img src="/images/team/kevinArkin.jpg" alt="Kevin Arkin" className={styles.teamMemberImage} />
             <h3>Kevin Arkin</h3>
-            <p>Co-Founder & COO</p>
           </div>
         </div>
+        <p className={styles.teamDescription}>One father, one son, one buddy</p>
       </div>
     </section>
   );

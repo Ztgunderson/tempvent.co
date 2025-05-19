@@ -236,10 +236,13 @@
   .productsGrid {
     gap: 1rem;
     grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
   }
 
   .productCard {
-    height: 350px;
+    height: auto;
+    min-height: 350px;
   }
 
   .productImageContainer {
@@ -248,39 +251,26 @@
     height: auto;
   }
 
-  .productDetails {
-    height: 120px;
+  .mediaContainer {
+    max-width: 100%;
+    margin: 0 auto 2rem;
   }
 
-  .productDetails h3 {
-    font-size: 1.3rem;
-  }
-
-  .productDescription {
-    font-size: 0.95rem;
-  }
-
-  .featureItem {
-    font-size: 0.85rem;
-  }
-
-  .price {
-    font-size: 1.2rem;
-  }
-
-  .featureList {
-    gap: 0.75rem;
-  }
-  
-  .featureList li {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
+  .productVideo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 }
 
 @media (max-width: 480px) {
+  .products {
+    padding: 1.5rem 0.5rem;
+  }
+
   .slogan {
     font-size: 1.1rem;
+    padding: 0 0.5rem;
   }
 
   .coversTitle {
@@ -288,42 +278,40 @@
   }
 
   .productsGrid {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
   .productCard {
-    height: 300px;
+    min-height: 300px;
   }
 
   .productImageContainer {
-    min-height: 100px;
-    aspect-ratio: 4 / 3;
-    height: auto;
+    min-height: 120px;
   }
 
   .productDetails {
-    height: 120px;
+    padding: 0.75rem;
   }
 
   .productDetails h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .productDescription {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .featureItem {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
   .price {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .featureList {
     gap: 0.5rem;
+    padding: 0 0.5rem;
   }
   
   .featureList li {

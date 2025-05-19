@@ -2,7 +2,7 @@
   "name": "tempventwebsite",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ztgunderson.github.io/tempvent.co",
+  "homepage": "https://ztgunderson.github.io/tempvent.co/",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",

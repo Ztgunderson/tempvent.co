@@ -1,6 +1,7 @@
 .products {
   padding: 4rem 2rem;
   background: white;
+  margin-top: 80px; /* Add margin for fixed header */
 }
 
 .marketingPitch {
@@ -261,6 +262,33 @@
     height: auto;
     aspect-ratio: 16 / 9;
   }
+
+  .testimonialGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .testimonials h2,
+  .team h2 {
+    font-size: 2rem;
+    padding: 0 1rem;
+  }
+
+  .teamGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 0 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .teamMember {
+    min-width: unset;
+    padding: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -317,6 +345,42 @@
   .featureList li {
     font-size: 0.8rem;
     padding: 0.3rem 0.6rem;
+  }
+
+  .testimonialGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.75rem;
+  }
+  
+  .testimonials h2,
+  .team h2 {
+    font-size: 1.8rem;
+    padding: 0 0.75rem;
+  }
+
+  .teamGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    padding: 0 0.75rem;
+  }
+
+  .teamMember {
+    min-width: unset;
+    padding: 1rem;
+  }
+
+  .teamMemberImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .teamMember h3 {
+    font-size: 1.1rem;
+  }
+
+  .teamMember p {
+    font-size: 0.9rem;
   }
 }
 
@@ -437,60 +501,4 @@
   color: #666;
   font-size: 1.1rem;
   margin: 0;
-}
-
-@media (max-width: 768px) {
-  .testimonialGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .testimonials h2,
-  .team h2 {
-    font-size: 2rem;
-  }
-
-  .teamGrid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    padding: 0 0.5rem;
-  }
-
-  .teamMember {
-    min-width: 250px;
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .testimonialGrid {
-    grid-template-columns: 1fr;
-  }
-  
-  .testimonials h2,
-  .team h2 {
-    font-size: 1.8rem;
-  }
-
-  .teamGrid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-  }
-
-  .teamMember {
-    min-width: 200px;
-    padding: 1rem;
-  }
-
-  .teamMemberImage {
-    width: 80px;
-    height: 80px;
-  }
-
-  .teamMember h3 {
-    font-size: 1.1rem;
-  }
-
-  .teamMember p {
-    font-size: 0.9rem;
-  }
 }

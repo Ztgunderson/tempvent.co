@@ -7,8 +7,6 @@ import { Link as ScrollLink } from 'react-scroll';
 import styles from './Header.module.css';
 import Image from 'next/image';
 
-const isProd = process.env.NODE_ENV === "production";
-
 interface NavLink {
   text: string;
   href?: string;
@@ -28,7 +26,7 @@ const Header: FC = () => {
       <div className={styles.logoContainer}>
         <Link href="/" className={styles.logoLink}>
           <Image
-            src={`${isProd ? '/tempvent.co' : ''}/images/logo/Logo2_cropped.png`}
+            src="/images/logo/Logo2_cropped.png"
             alt="Temporary Covers, Cleaner Than All The Others"
             width={50}
             height={50}

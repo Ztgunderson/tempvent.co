@@ -5,8 +5,8 @@
   "homepage": "https://ztgunderson.github.io/tempvent.co/",
   "scripts": {
     "dev": "next dev",
-    "clean": "if exist .next rmdir /s /q .next && if exist out rmdir /s /q out",
-    "build": "npm run clean && next build && if not exist out mkdir out && xcopy /E /I /Y .next\\out\\* out\\ && xcopy /E /I /Y public\\* out\\",
+    "clean": "rimraf .next out",
+    "build": "npm run clean && next build && mkdir -p out && cp -r .next/out/* out/ && cp -r public/* out/",
     "export": "next export",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out",
@@ -33,6 +33,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "gh-pages": "^6.3.0",
+    "rimraf": "^5.0.5",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

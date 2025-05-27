@@ -138,7 +138,7 @@ const Products: FC<{ id: string }> = ({ id }) => {
             playsInline
             controls
           >
-            <source src={`${basePath}/videos/product-demo.mp4`} type="video/mp4" />
+            <source src={getAssetPath('/videos/product-demo.mp4')} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>

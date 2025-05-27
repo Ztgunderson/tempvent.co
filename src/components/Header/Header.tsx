@@ -6,6 +6,7 @@ import { Cart } from '@/components/Cart';
 import { Link as ScrollLink } from 'react-scroll';
 import styles from './Header.module.css';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 interface NavLink {
   text: string;
@@ -15,6 +16,11 @@ interface NavLink {
 
 const Header: FC = () => {
   const { setIsCartOpen, cartItems, isCartOpen } = useCart();
+  const pathname = usePathname();
+  const isProd = pathname.startsWith('/tempvent.co');
+  const basePath = isProd ? '/tempvent.co' : '';
+  
+  const getAssetPath = (path: string) => `${basePath}${path}`;
 
   const navigationLinks: NavLink[] = [
     { href: '#products', text: 'Product' },
@@ -26,7 +32,7 @@ const Header: FC = () => {
       <div className={styles.logoContainer}>
         <Link href="/" className={styles.logoLink}>
           <Image
-            src="/images/logo/Logo2_cropped.png"
+            src={getAssetPath('/images/logo/Logo2_cropped.png')}
             alt="Temporary Covers, Cleaner Than All The Others"
             width={50}
             height={50}

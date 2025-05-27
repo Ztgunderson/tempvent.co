@@ -4,8 +4,9 @@
   "private": true,
   "homepage": "https://ztgunderson.github.io/tempvent.co/",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build && cp -r public/* out/",
+    "dev": "next dev",
+    "clean": "if exist .next rmdir /s /q .next && if exist out rmdir /s /q out",
+    "build": "npm run clean && next build && if not exist out mkdir out && xcopy /E /I /Y .next\\out\\* out\\ && xcopy /E /I /Y public\\* out\\",
     "export": "next export",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out",
@@ -15,25 +16,24 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@sendgrid/mail": "^8.1.4",
-    "next": "^15.2.3",
+    "next": "14.1.0",
     "nodemailer": "^6.10.1",
-    "postcss": "^8.5.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-icons": "^5.5.0",
+    "postcss": "^8.4.35",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
     "react-scroll": "^1.9.3"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4.0.12",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "@types/react-scroll": "^1.8.10",
-    "eslint": "^9",
-    "eslint-config-next": "15.2.1",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
     "gh-pages": "^6.3.0",
-    "tailwindcss": "^4.0.12",
+    "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
 }

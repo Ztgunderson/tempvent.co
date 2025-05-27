@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your custom styles below */
+
 :root {
     --content-width: min(100% - 2rem, 1200px);
     --fluid-padding: clamp(1rem, 5vw, 2rem);
